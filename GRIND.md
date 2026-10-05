@@ -120,3 +120,36 @@ No networking or Linux content learned today — purely infrastructure/tooling s
 Next: resume networking (or Linux) content next session; watching a GitHub overview video for consolidation before then.
 
 ---------------------------
+
+Date - 2026-10-05
+Subject - Network
+Topic - DNS (full), HTTP/HTTPS/TLS, live terminal proof across multiple real sites
+
+Commands - dig google.com, dig google.com MX/NS/TXT, dig github.com A/NS, curl -v https://google.com , curl -v https://invicx.github.io/barca-quiz/, curl https://api.github.com/repos/invicx/career_path, python3 -m http.server 8080, curl http://localhost:8080, ss -tulpn
+
+Keywords - DNS, resolver, TTL, root, TLD, authoritative, A record, NS record, 5-tuple, TLS handshake, certificate, HTTP methods, status codes, localhost, port 8080
+
+Brief -
+Finished DNS end to end: the Root → TLD → Authoritative chain, the resolver's role (local resolver forwards to a recursive resolver, which walks the chain), and TTL as the cache expiry controlling how long an answer is reused before a fresh lookup.
+
+Ran dig live multiple times — google.com (A record, TTL), github.com (A record, then NS records showing GitHub uses BOTH AWS Route 53 and NS1 simultaneously for reliability and availability, not just raw redundancy).
+
+Covered the 5-tuple (source IP/port, dest IP/port, protocol) as what uniquely identifies one connection, explaining how multiple browser tabs to the same site stay distinguishable.
+
+Covered ports in depth: well-known vs registered vs ephemeral ranges, and built a DevOps port cheat sheet (22, 80, 443, 53, 67/68, 3306, 5432, 6379, 27017, 8080, 179, etc.).
+
+Covered HTTP/HTTPS/TLS: the TLS handshake sequence (Client Hello, Server Hello, Certificate, Cert Verify, Finished) matched to real curl -v output, what a certificate actually proves (identity + encryption, via a trusted CA), and the HTTP status code families (2xx/3xx/4xx/5xx).
+
+Proved the full DNS → TCP → TLS → HTTP chain live, three times, on three real targets: example.com, google.com, and my own GitHub Pages site (invicx.github.io/barca-quiz/, got a real 200 OK with my own deployed HTML).
+
+Covered HTTP methods (GET/POST/PUT/DELETE/PATCH) and where they're actually used in DevOps — mainly troubleshooting and automation scripts, since most tools (AWS CLI, Terraform) send these internally without me typing them directly.
+
+Ran a live local server (python3 -m http.server 8080) and hit it with curl http://localhost:8080 — connected a real "connection refused" vs "working" comparison to the concept of a port only responding when something is actively listening on it.
+
+Covered reserved IP ranges as a side topic: private (10/8, 172.16/12, 192.168/16), loopback (127/8), APIPA (169.254/16), and documentation/testing ranges (192.0.2.0/24 etc.), plus CGNAT.
+
+Self-identified real gaps during a mixed quiz: answered the 5-tuple instead of the actual DNS resolution flow when asked, said DNS uses "both" TCP and UDP without the nuance (primarily UDP, TCP only for larger responses) despite it being visible in my own dig output, and skipped two questions (NXDOMAIN meaning, TTL propagation delay) — flagged honestly rather than glossed over.
+
+Dense, long session — DNS fully closed, HTTP/HTTPS/TLS mostly closed (status code drilling and localhost/port concept still settling, to continue tomorrow).
+
+Next: finish settling HTTP status codes + localhost/port concept, then NAT, then Security Groups vs NACLs, then the full VPC build.
