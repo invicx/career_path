@@ -153,3 +153,34 @@ Self-identified real gaps during a mixed quiz: answered the 5-tuple instead of t
 Dense, long session — DNS fully closed, HTTP/HTTPS/TLS mostly closed (status code drilling and localhost/port concept still settling, to continue tomorrow).
 
 Next: finish settling HTTP status codes + localhost/port concept, then NAT, then Security Groups vs NACLs, then the full VPC build.
+
+-----------------------------------------------------------------
+
+Date - 2026-10-06
+Subject - Network + AWS
+Topic - HTTP status codes live testing, Flask multi-method API build, GitHub project workflow, AWS Skill Builder progress
+
+Commands - curl -I https://httpbin.org/status/<code>, pip install flask --break-system-packages, python3 app.py, curl -X GET/POST/PUT/DELETE/PATCH, ss -tulpn, multipass transfer, curl ipinfo.io
+
+Keywords - HTTP status codes, flag, framework, port, localhost, HTTP methods, Flask, multipass transfer, NAT (queued for tomorrow)
+
+Brief -
+Pushed Oct 5's log entry to GitHub (DNS, HTTP/HTTPS/TLS), confirming the daily add/commit/push flow works cleanly now with no setup friction.
+
+Closed out HTTP status codes live — ran 200, 404, 500, 502 against httpbin.org after httpstat.us unexpectedly failed; confirmed all 4 ranges (success, client error, server error variants) with real responses.
+
+Clarified core terms along the way: flag (a command modifier like -I or -v), framework (pre-built structure handling repetitive work, e.g. Flask), port (arbitrary dev ports like 5000/3000/8080/6503, none reserved, just convention), and localhost (127.0.0.1, your own machine talking to itself).
+
+Built a real Flask API from zero prior Flask knowledge, specifically to understand what each HTTP method does behind the scenes — GET, POST, PUT, DELETE, PATCH all implemented as separate routes, each returning a distinct response.
+
+Ran and tested the app inside Dev (multipass VM) first, confirmed all 5 methods working via curl from Mac, with matching server-side logs (200 OK) visible in Dev's terminal — proof from both the client and server side.
+
+Transferred app.py from Dev to Mac using multipass transfer, wrote a full project README (what it does, how to run/test it, what was learned, plus an honest process note about learning Flask from scratch with AI guidance), committed and pushed the project to GitHub under projects/flask_hello_world.
+
+Also added a root README.md to the career_path repo, giving the repo actual context (background, motivation, file structure) instead of a blank page.
+
+Covered NAT conceptually — private-to-public IP translation, the translation table mechanism, and the AWS NAT Gateway vs Internet Gateway distinction — but did not finish or test hands-on; explicitly deferred to continue tomorrow.
+
+Continued AWS Skill Builder: Networking Core - Knowledge Badge Readiness Path (pre-assessment and AWS Networking Basics both complete, 25 trainings remaining) and AWS Cloud Practitioner Essentials (Module 1 complete, Module 2 - Compute in the Cloud in progress). Clarified that these are free completion courses, not the same as the paid official AWS certifications (CCP, SAA) — the free courses are prep material, not the credential itself.
+
+Next: finish NAT (hands-on proof via curl ipinfo.io vs private IP), then Security Groups vs NACLs, then the full VPC build.
