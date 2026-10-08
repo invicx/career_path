@@ -184,3 +184,26 @@ Covered NAT conceptually — private-to-public IP translation, the translation t
 Continued AWS Skill Builder: Networking Core - Knowledge Badge Readiness Path (pre-assessment and AWS Networking Basics both complete, 25 trainings remaining) and AWS Cloud Practitioner Essentials (Module 1 complete, Module 2 - Compute in the Cloud in progress). Clarified that these are free completion courses, not the same as the paid official AWS certifications (CCP, SAA) — the free courses are prep material, not the credential itself.
 
 Next: finish NAT (hands-on proof via curl ipinfo.io vs private IP), then Security Groups vs NACLs, then the full VPC build.
+
+---------------------------------------------------------
+
+Date - 2026-10-07
+
+Subject - Network + AWS
+
+Topic - VPC architecture diagram to static file
+
+Commands - none
+
+Keywords - SVG, static asset, hardcoded colors, widget vs file, portability
+
+Brief -
+Converted the single-AZ VPC diagram built earlier (IGW, VPC 10.10.0.0/16, public subnet with bastion + NAT, private subnet with app + DB, NACL/SG placement) from a live in-chat widget into an actual standalone .svg file.
+
+Learned the practical gap between a rendered widget and a real file: the widget leans on the chat environment's CSS variables for color, so it won't display correctly anywhere else — GitHub, a browser, etc. Fixing that meant hardcoding every fill/stroke as explicit hex values so the file renders correctly on its own.
+
+Saved it locally for now — plan is to drop it into an end-to-end project later rather than commit it standalone.
+
+Next: build the actual VPC in AWS console, not just the diagram.
+
+------------------------------------
