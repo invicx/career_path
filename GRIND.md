@@ -204,6 +204,27 @@ Learned the practical gap between a rendered widget and a real file: the widget 
 
 Saved it locally for now — plan is to drop it into an end-to-end project later rather than commit it standalone.
 
-Next: build the actual VPC in AWS console, not just the diagram.
+Next: Linux and Quiz.
 
 ------------------------------------
+
+Date - 2026-10-08
+
+Subject - Network Review + Linux
+
+Topic - Full networking knowledge check (2 quiz rounds), closing the networking chapter, Linux overview and filesystem hierarchy
+
+Commands - ls -la /var/log, sudo tail /var/log/auth.log
+
+Keywords - quiz, knowledge check, ARP vs DNS, stateful vs stateless, filesystem hierarchy, /etc /var /home /proc, log rotation, auth.log, Linux roadmap
+
+Brief -
+Took two 20-question quiz rounds covering everything from the networking chapter — OSI/TCP-IP, ARP, CIDR, routing, TCP/UDP, DNS, HTTP, NAT, bastion, SG vs NACL, plus Flask/HTTP methods and the Git workflow. Scored 17/20 and 16/20. Misses were mostly role confusion between similar mechanisms (ARP vs DNS, route tables vs SG/NACL) rather than not knowing the material — one answer (NACL statelessness) was a known-answer slip from reading the question too fast, not a real gap.
+
+Called networking chapter closed for now — fundamentals are solid enough to build on, deeper clarity will come when actually deploying the VPC later.
+
+Moved into Linux. Covered what Linux actually is, why it matters for DevOps specifically (it's what the infrastructure runs on, scriptable, transparent), and the core pieces (kernel, shell, filesystem, processes, permissions, package manager). Went deep on the filesystem hierarchy — /etc, /var, /home, /proc, /bin, /tmp — then applied it live by running ls -la /var/log on the VM and walking through real output: log rotation pattern (.1, .2.gz...), what each log file is for (syslog, auth.log, kern.log, dpkg.log, cloud-init.log, wtmp/btmp), and why auth.log has restricted permissions.
+
+Built a full Linux Tier 1+2 checklist (14 sections, tagged, filesystem through scripting/cron/storage) as a Word and PDF doc. Actual daily commitment is 3hrs minimum (not 1hr as originally estimated) — at that pace, full checklist clears in ~6-8 days rather than 16-19. Flagged that compressing to 6-8 days covers everything once but scripting/text-processing need repetition to actually stick, not just a single pass.
+
+Next: File Viewing & Editing (cat/less/tail -f, nano/vim basics), then Permissions.
