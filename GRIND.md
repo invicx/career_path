@@ -228,3 +228,37 @@ Moved into Linux. Covered what Linux actually is, why it matters for DevOps spec
 Built a full Linux Tier 1+2 checklist (14 sections, tagged, filesystem through scripting/cron/storage) as a Word and PDF doc. Actual daily commitment is 3hrs minimum (not 1hr as originally estimated) — at that pace, full checklist clears in ~6-8 days rather than 16-19. Flagged that compressing to 6-8 days covers everything once but scripting/text-processing need repetition to actually stick, not just a single pass.
 
 Next: File Viewing & Editing (cat/less/tail -f, nano/vim basics), then Permissions.
+
+-----------------------------------------------
+
+Date - 2026-10-09
+
+Subject - Linux
+
+Topic - Filesystem & Navigation: paths, directory switching, listing files, and basic file operations
+
+Commands - `pwd`, `cd ~`, `cd ..`, `cd -`, `mkdir -p`, `touch`, `ls`, `ls -l`, `cp`, `mv` (reviewed and discussed)
+
+Keywords - absolute vs relative paths, `$HOME`, `cd -`, parent directory, `mkdir`, `touch`, `ls -l`, file vs directory, `cp`, `mv`, `rm`, `rmdir`, recursive deletion, force flag
+
+Brief -
+
+Continued Linux filesystem and navigation practice inside the Dev Ubuntu Multipass VM. Reviewed nested directory structures, absolute vs relative paths, and the difference between moving to a parent directory with `cd ..` and switching to the previous working directory with `cd -`.
+
+Verified `cd -` by switching between `~/practice/level1/level2` and `~/practice/level1/level2/level3`. Connected the concept to macOS Cmd+Tab as an analogy for switching between previous contexts, while noting that the actual operations are different.
+
+Reviewed `ls` options and identified the leading `d` in `ls -l` output as a directory and `-` as a regular file. Discussed how terminal colours can also distinguish file types, depending on configuration.
+
+Created and inspected `original.txt` inside `~/practice/files`, then confirmed that `copy.txt` existed alongside it. Reviewed `cp` as copying while preserving the original, and `mv` as a command used both for renaming and moving files or directories.
+
+Covered `mkdir` vs `touch`, and the difference between `rm` and `rmdir`. Clarified that `rmdir` removes empty directories, `rm -r` recursively removes a directory and its contents, and `rm -f` forces removal while suppressing many prompts and errors. The combined `rm -rf` example was discussed but deliberately left for the next session; it was not executed.
+
+**Epiphanies / Key Realizations**
+
+- `cd -` switches between the current and previous working directories, whereas `cd ..` follows the directory hierarchy upward.
+- `$HOME` refers to the home directory, while `pwd` reports the current working directory; they can match at the home directory but differ after navigating elsewhere.
+- `mkdir` creates directories; `touch` creates an empty file if it doesn't exist.
+- `cp` preserves the original, whereas `mv` renames or relocates it.
+- The `-r` flag means recursive; `-f` means force. They serve different purposes and should not be confused.
+
+Next - Continue filesystem file operations: verify moving files into `archive`, practise `rmdir` with an empty directory, and run the disposable `demo` example to compare `rm -r` and `rm -rf`. Then continue through `find`, hard vs symbolic links, and filesystem hierarchy review.
