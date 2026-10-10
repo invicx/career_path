@@ -231,7 +231,7 @@ Next: File Viewing & Editing (cat/less/tail -f, nano/vim basics), then Permissio
 
 -----------------------------------------------
 
-Date - 2026-10-09
+Date - 2026-10-10
 
 Subject - Linux
 
