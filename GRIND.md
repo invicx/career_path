@@ -298,3 +298,40 @@ Epiphanies / Key Realizations -
 Next -
 
 Continue Section 1 with `find` — locating files by name, type, size, and modification time. Then cover symbolic and hard links and review the remaining filesystem hierarchy items. Resume the pending hands-on deletion exercise only if needed; the core `rm` vs `rmdir` behaviour was already reasoned through. Move to File Viewing & Editing only after completing the current checklist section.
+
+---------------------------------------
+
+Date - 2026-10-12
+
+Subject - Linux
+
+Topic - Filesystem & Navigation: `find`, hard links vs symbolic links, filesystem hierarchy, and introduction to file viewing
+
+Commands - `find` by name/type/size/mtime, `find -newer`, `ln`, `ln -s`, `ls -li`, `cat`, `touch`, `sleep`, `echo`, `printf`, `seq`, `less`, `cd /`
+
+Keywords - `find`, `-name`, `-type`, `-size`, `-mmin`, `-mtime`, `-newer`, inode, hard link, symbolic link, dangling symlink, filesystem hierarchy, `/etc`, `/var/log`, `/home`, `/proc`, `printf`, `less`
+
+Brief -
+
+Continued Linux filesystem practice on the Dev Ubuntu VM. Practised searching files by name, type, size, and modification time. Explored `find -newer` and confirmed that it requires a reference filename; files modified later than the reference are returned. Investigated modification-time search boundaries using `-mmin`.
+
+Created and inspected a hard link with `ln`, confirming that it shared the original file's inode. Created a symbolic link with `ln -s` and confirmed it had a separate inode. Tested deletion behaviour using separate test files: the hard link remained readable after deleting its target filename, while the symbolic link remained present but became dangling because its target path no longer existed.
+
+Discussed practical security and recovery implications of links, including inode searches with `find -inum` and the limitations of relying on logs alone. Explored the Linux filesystem hierarchy and correctly identified `/etc` for configuration, `/var/log` for logs, and `/proc` for live process and kernel information.
+
+Started File Viewing & Editing. Compared `echo` and `printf`, created `notes.txt` using `printf`, and created `longfile.txt` with `seq 1 30`. Opened the file using `less` and reviewed navigation/search keys: Space, `b`, arrow keys, `g`, `G`, `/pattern`, `n`, and `q`.
+
+Epiphanies / Key Realizations -
+
+- A hard link is another directory entry for the same inode; a symbolic link is a separate filesystem object storing a path.
+- Deleting a target filename does not necessarily delete its data if another hard link remains. A symbolic link can survive while becoming dangling.
+- `find -newer filename` compares modification times against a reference file; it does not search for a file named `filename`.
+- Logs can help investigate file operations, but Linux does not automatically audit every deletion or link creation.
+- `printf` offers predictable formatting, while `echo` is convenient for simple output.
+- `less` is useful for navigating large files and logs without dumping their entire contents.
+
+Next -
+
+Finish File Viewing & Editing: practise `head`, `tail`, and `tail -f`; learn basic `nano`/`vim` editing and saving; compare files using `diff`. Continue through the Linux Tier 1 + Tier 2 checklist, then build at least two practical Linux projects before moving deeper into AWS.
+
+-------------------------------
