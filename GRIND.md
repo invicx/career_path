@@ -367,3 +367,35 @@ Next -
 Continue Section 4 (Text Processing) with a dedicated grep lab. Practise regex anchors, character classes, alternatives, repetition, and word boundaries before moving on to `sed`, `awk`, `cut`, `sort`, `uniq`, `wc`, pipes/redirection, and `xargs`. Inspect `archive/` and `demo/` before cleaning up practice files.
 
 ----------------------------
+
+Date - October 14, 2026
+
+Subject - Linux Text Processing
+
+Topic - grep, cut, sort, uniq, wc, sed, basic awk, pipes and file management.
+
+Commands -
+- `grep`: `-i`, `-n`, `-c`, `-v`, `-E`, `-r`
+- `cut -d' ' -f1 users.log`
+- `sort -k3,3 -k2,2`
+- `uniq`, `uniq -c`, `uniq -d`, `uniq -u`
+- `wc -l`, `wc -w`, `wc -c`
+- `sed 's/old/new/g' file`
+- `awk '{print $1, $4}' users.log`
+- `awk -F'[ =]' '{print $2, $8}' users.log`
+- Pipes `|`, chaining `&&`, redirection `>` and `>>`
+- `find`, `mkdir`, `mv`, `rm`, `rmdir`, `ls -lah`
+
+Keywords - Text processing, field extraction, sorting, deduplication, substitution, awk field separators, pipes, redirection.
+
+Brief - Practised Linux text-processing commands on log and user datasets. Learned to extract fields, sort by multiple keys, count duplicates, count lines/words/bytes, substitute text with sed, and extract usernames and statuses using awk. Reviewed command pipelines and file management.
+
+Epiphanies / Key Realizations -
+- `uniq` works on adjacent duplicate lines; combine with `sort`.
+- `sed` prints transformed output by default without modifying the original.
+- `awk` can extract and rearrange fields using field numbers and custom separators.
+- Pipes pass output between commands for successive processing.
+
+Next - Complete awk with practical exercises, cover redirection and xargs, practise find + grep, then take the combined Linux Sections 1–4 test.
+
+---------------------------------
