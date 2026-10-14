@@ -335,3 +335,35 @@ Next -
 Finish File Viewing & Editing: practise `head`, `tail`, and `tail -f`; learn basic `nano`/`vim` editing and saving; compare files using `diff`. Continue through the Linux Tier 1 + Tier 2 checklist, then build at least two practical Linux projects before moving deeper into AWS.
 
 -------------------------------
+
+Date - 2026-10-13
+
+Subject - Linux
+
+Topic - File Viewing & Editing, Permissions & Ownership, introduction to grep
+
+Commands - `diff`, `chmod`, `umask`, `ls -l`, `ls -ld`, `grep`, `echo $?`
+
+Keywords - file comparison, rwx, octal permissions, symbolic permissions, ownership, `sudo`, `umask`, `grep`, regex anchors, exit status
+
+Brief -
+
+Reviewed `diff` by comparing two files and observing how changes affect its output. Covered numeric and symbolic permissions, ownership commands (`chown`, `chgrp`), `sudo` vs root, and `umask`. Verified `umask` was `0002`, producing permissions of `664` for a new file and `775` for a new directory.
+
+Started text processing with `grep`: case sensitivity, line numbers, inverted matches, recursive searching, and the `^` beginning-of-line anchor. Verified `$?` returns `0` for success and `1` when the tested grep search finds no match. A search for errors in `/var/log/syslog` returned no output; the reason was not confirmed.
+
+Reviewed `tail -f`, basic Vim save/quit keys, and `diff`. Deeper grep and regex practice remain unfinished.
+
+Epiphanies / Key Realizations -
+
+- `umask` affects permissions on new files and directories, not existing ones.
+- `chmod +x` adds execute permission across all categories by default; `chmod a+x` makes this explicit.
+- `grep -v` excludes matching lines; `-i` makes matching case-insensitive.
+- `grep -r` searches directory trees, while `^` matches the start of a line.
+- A grep exit status of `1` commonly means no match, not necessarily an execution error.
+
+Next -
+
+Continue Section 4 (Text Processing) with a dedicated grep lab. Practise regex anchors, character classes, alternatives, repetition, and word boundaries before moving on to `sed`, `awk`, `cut`, `sort`, `uniq`, `wc`, pipes/redirection, and `xargs`. Inspect `archive/` and `demo/` before cleaning up practice files.
+
+----------------------------
