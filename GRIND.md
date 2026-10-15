@@ -399,3 +399,26 @@ Epiphanies / Key Realizations -
 Next - Complete awk with practical exercises, cover redirection and xargs, practise find + grep, then take the combined Linux Sections 1–4 test.
 
 ---------------------------------
+
+Date - October 15, 2026
+
+Subject - Linux Text Processing
+
+Topic - awk, redirection, pipes, xargs, find + grep, Sections 1–4 practical
+
+Commands -
+`grep -i`, `grep -in`, `awk -F'[ =]'`, `wc -l`, `find`, `xargs`, `ls -l`, `cat`, `echo`, `>`, `>>`, `<`, `&&`
+
+Keywords - awk fields, filtering, stdin/stdout, redirection, command-line arguments, process pipelines
+
+Brief - Completed practical awk filtering using multiple conditions, extracted usernames and statuses, and practised output redirection and line counting. Used `find` with `xargs` to pass filenames to commands. Completed 9 combined practical tasks covering grep, awk, redirection, counting, and file discovery. Encountered a grep input/output conflict when searching files while redirecting results into one of the searched files.
+
+Epiphanies / Key Realizations -
+- `find` locates files; `xargs` passes their paths as command-line arguments.
+- `awk` filters records and extracts fields using separators and conditions.
+- `>` overwrites, `>>` appends, and `<` supplies standard input.
+- Pipes pass output to stdin; not every command reads stdin.
+
+Next - Complete the remaining Sections 1–4 practicals and cover `sed`, `cut`, `sort`, and `uniq` gaps. Then begin process and system-resource monitoring with `ps`, `top`, `free`, `df`, and related commands.
+
+------------------------------
