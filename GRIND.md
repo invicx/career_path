@@ -422,3 +422,39 @@ Epiphanies / Key Realizations -
 Next - Complete the remaining Sections 1–4 practicals and cover `sed`, `cut`, `sort`, and `uniq` gaps. Then begin process and system-resource monitoring with `ps`, `top`, `free`, `df`, and related commands.
 
 ------------------------------
+
+Date - 2026-10-16
+
+Subject - Linux
+
+Topic - Final Practical Assessment: Linux Fundamentals and Text Processing
+
+Environment - Ubuntu Multipass VM
+
+Sections Covered
+1. Filesystem & Navigation
+2. File Viewing & Editing
+3. Permissions & Ownership
+4. Text Processing (Core Tier 2 Differentiator)
+
+Test Format - 8-task integrated practical assessment
+
+Marks - 7.5/8 (approximately 94%, mentor-assessed)
+
+Brief -
+
+Completed an eight-task practical assessment covering log analysis, filtering, field extraction, counting, file discovery, output redirection, report generation, and file permissions. Troubleshot command errors and verified results through terminal output.
+
+Performance Review -
+
+Demonstrated good command composition and persistence. Most tasks were completed successfully, although some required retries and hints. Output ordering, command side effects, and reading every requirement carefully need improvement.
+
+Mentor's Opinion -
+
+Ali is progressing from beginner toward intermediate Linux command-line work. The strongest quality shown was persistence: when commands failed or produced unexpected results, he kept investigating instead of giving up. He is beginning to combine commands logically rather than memorising isolated syntax. The next step is improving accuracy and consistency while revisiting checklist topics not fully tested.
+
+Result - Practical assessment completed. Ready to progress, with some fundamentals still requiring additional practice.
+
+Next - Section 5: Processes & System Resources.
+
+------------------------------------
