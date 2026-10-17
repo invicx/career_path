@@ -458,3 +458,36 @@ Result - Practical assessment completed. Ready to progress, with some fundamenta
 Next - Section 5: Processes & System Resources.
 
 ------------------------------------
+
+Date - 2026-10-17
+
+Subject - Linux
+
+Topic - Processes & System Resources: process inspection, signals, job control, and disk usage (Section 5 — in progress)
+
+Commands - `ps aux`, `ps -ef`, `ps -o`, `top`, `htop`, `yes > /dev/null &`, `kill`, `kill -15`, `kill -9`, `sleep`, `jobs`, `jobs -l`, `bg`, `fg`, `nohup`, `df -h`, `multipass info dev-ubuntu`
+
+Keywords - PID vs job ID, process states, CPU usage, memory usage, SIGTERM, SIGKILL, SIGHUP, foreground vs background, job control, `nohup`, filesystem capacity, virtual disk
+
+Brief -
+
+Continued Linux Mastery Checklist Section 5 inside the Ubuntu 24.04.3 LTS Multipass VM. Practised process inspection with `ps aux` and `ps -ef`, customized output with `ps -o`, sorted processes by CPU and memory usage, and compared `ps` snapshots with the continuously updating `top` and `htop` monitors.
+
+Created a CPU-heavy process using `yes > /dev/null &` and terminated it with `kill %1`. Practised terminating `sleep` processes with `kill`, `kill -15`, and `kill -9`. Learned about process states, including running, sleeping, stopped, and zombie processes, and corrected a `ps -o` formatting error caused by using an invalid uppercase field name.
+
+Practised job control using `sleep 300 &`, `jobs`, `Ctrl+Z`, `bg`, `jobs -l`, and process IDs. Explored `nohup sleep 300 &` and inspected the running process. Discussed `killall` and why indiscriminately terminating processes by name can be risky. Actual survival after terminal disconnection was not tested.
+
+Used `df -h` to inspect disk capacity inside the VM. The root filesystem showed approximately 3.9 GB total, 2.7 GB used, 1.2 GB available, and 69% usage. Compared this with `multipass info dev-ubuntu` on macOS, which reported 2.7 GiB disk usage out of 4.8 GiB and approximately 247.5 MiB memory usage out of 951.9 MiB.
+
+Epiphanies / Key Realizations
+
+- `ps` provides a snapshot, while `top` and `htop` continuously update process information.
+- A PID identifies a process, while a job ID identifies a job managed by the current shell.
+- `kill` sends a signal: SIGTERM requests graceful termination, while SIGKILL forces termination.
+- `Ctrl+C` interrupts a foreground process; `Ctrl+Z` suspends it; `bg` resumes it in the background, and `fg` brings it back to the foreground.
+- `nohup` ignores SIGHUP but does not guarantee survival through VM shutdown.
+- `df -h` reports filesystem capacity, which is different from the virtual disk capacity reported by Multipass.
+
+Next - Continue Section 5 by practising `du -sh`, `free -h`, and `uptime`. Understand load averages and complete the remaining checklist items before moving to Section 6.
+
+-------------------------------------
