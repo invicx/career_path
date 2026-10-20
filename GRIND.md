@@ -491,3 +491,32 @@ Epiphanies / Key Realizations
 Next - Continue Section 5 by practising `du -sh`, `free -h`, and `uptime`. Understand load averages and complete the remaining checklist items before moving to Section 6.
 
 -------------------------------------
+
+Date - 2026-10-19
+
+Subject - Linux
+
+Topic - Services & systemd: service management, journalctl, and unit files
+
+Commands - `systemctl status`, `start`, `stop`, `restart`, `enable`, `disable`, `is-active`, `is-enabled`, `systemctl cat`, `journalctl -u`, `-f`, `--since`, `--until`, `--no-pager`, `sudo apt update`, `sudo apt upgrade`
+
+Keywords - systemd, services, units, SSH, socket activation, cron, journal logs, timestamps, `ExecStart`, `EnvironmentFile`, `Restart=on-failure`, boot targets, troubleshooting
+
+Brief -
+
+Practised managing the Cron service: checking status, starting, stopping, restarting, enabling, and disabling it. Restored the service and verified its state.
+
+Investigated SSH socket activation and used `journalctl` to examine service events, follow live logs, and filter by time. Compared journal evidence with shell history to understand how administrators investigate incidents.
+
+Updated Ubuntu packages, rebooted the VM to load the updated kernel, and verified that no packages remained upgradable.
+
+Epiphanies / Key Realizations
+
+- Service state and automatic startup configuration are separate.
+- Journal logs and shell history provide evidence, not definitive proof of causation.
+- A systemd unit file defines how systemd manages a service.
+- Recognising command output is only the first step; deeper understanding requires practice.
+
+Next - Writing a basic .service unit file #systemd, Understanding boot targets at a conceptual level
+
+-----------------------------
