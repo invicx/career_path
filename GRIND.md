@@ -520,3 +520,35 @@ Epiphanies / Key Realizations
 Next - Writing a basic .service unit file #systemd, Understanding boot targets at a conceptual level
 
 -----------------------------
+
+
+Date - 2026-10-20
+
+Subject - Linux
+
+Topic - Users, Groups & Sudo: account management, account files, and privilege escalation
+
+Commands - `whoami`, `id`, `groups`, `getent passwd`, `getent group`, `cat /etc/passwd`, `grep`, `tail`, `sudo -l`, `sudo whoami`, `sudo -i`, `su -`, `useradd`, `usermod`, `userdel`, `groupadd`, `visudo`, `mkdir`, `chown`, `chmod`, `rm -r`
+
+Keywords - users, groups, UID, GID, primary group, supplementary groups, `/etc/passwd`, `/etc/group`, `/etc/shadow`, `/etc/sudoers`, `visudo`, sudo, root, home directories, account deletion, permissions
+
+Brief -
+
+Practised inspecting user accounts, IDs, group memberships, and account records. Examined the roles of `/etc/passwd`, `/etc/group`, and `/etc/shadow`, including where password information is stored.
+
+Compared `sudo` and `su`, checked sudo privileges, and explored how `useradd`, `usermod`, and `userdel` manage accounts. Practised understanding home-directory creation, ownership, permissions, and the difference between deleting an account and removing its home directory.
+
+Discussed the risks of recursive deletion and why destructive commands must be handled carefully.
+
+Epiphanies / Key Realizations
+
+- `/etc/passwd` stores account records; password hashes are generally stored in `/etc/shadow`.
+- A user has a primary group and may have supplementary groups.
+- `sudo` elevates an individual command, while `sudo -i` opens a root shell.
+- `userdel` and `userdel -r` differ in whether removal of the home directory and mail spool is attempted.
+- Account configuration, group membership, and filesystem permissions are related but distinct.
+- Destructive commands can damage the system; understanding the target path and command options matters.
+
+Next - Networking-as-Troubleshooting: inspect network interfaces with `ip addr` #networking #ts
+
+----------------------------------------------
