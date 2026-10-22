@@ -521,7 +521,6 @@ Next - Writing a basic .service unit file #systemd, Understanding boot targets a
 
 -----------------------------
 
-
 Date - 2026-10-20
 
 Subject - Linux
@@ -552,3 +551,37 @@ Epiphanies / Key Realizations
 Next - Networking-as-Troubleshooting: inspect network interfaces with `ip addr` #networking #ts
 
 ----------------------------------------------
+
+Date - 2026-10-22
+
+Subject - Linux
+
+Topic - Networking-as-Troubleshooting: interfaces, routing, ICMP, DNS, ARP and Ethernet frames
+
+Commands - `ip addr`, `ip route`, `ping -c 4 192.168.64.1`, `ping -c 4 8.8.8.8`, `ping -c 10 192.168.1.10`, `getent hosts google.com`, `ip route get 192.168.1.10`, `ip route get 192.168.64.1`, `ip neigh`, `ip neigh show 192.168.64.1`
+
+Keywords - Networking, network interface, IPv4, IPv6, subnet, CIDR, default gateway, routing table, packet, Ethernet frame, MAC address, ARP, NDP, ICMP, ping, packet loss, TTL, hop limit, DNS, TLD, neighbour table, next hop
+
+Brief -
+
+- Inspected network interfaces using `ip addr`, identifying loopback (`lo`) and the VM's virtual interface (`enp0s1`).
+- Read the routing table using `ip route` and identified the VM's IP (`192.168.64.2`), subnet (`192.168.64.0/24`) and default gateway (`192.168.64.1`).
+- Used `ping` to test gateway and external IP connectivity. Investigated 100% packet loss when testing an example address outside the VM's subnet.
+- Used `ip route get` to compare direct local-subnet routing with routing through the default gateway.
+- Used `getent hosts google.com` to verify hostname resolution through the system's configured name-resolution mechanism.
+- Inspected the neighbour table with `ip neigh`, identifying the gateway's MAC address and learning about IPv4 ARP, IPv6 NDP, and `REACHABLE` versus `STALE` neighbour states.
+- Connected the concepts of IP packets, Ethernet frames, MAC addresses, network interfaces, routers and next-hop forwarding.
+
+Epiphanies / Key Realizations
+
+- A network interface is the connection point; an IP address is assigned to it.
+- Linux uses its routing table to choose a destination route and outgoing interface.
+- Local-subnet traffic normally goes directly to the destination, while traffic to other networks uses a router.
+- ARP resolves local IPv4 neighbours to link-layer addresses; IPv6 uses NDP.
+- IP packets travel across networks, while link-layer frames carry them across individual links. MAC addresses are rewritten at routed hops.
+- ICMP supports diagnostics and error messages. TTL limits IPv4 packet forwarding; IPv6 uses a Hop Limit.
+- DNS resolution, IP reachability and application connectivity are separate things.
+
+Next - Continue Networking-as-Troubleshooting in a natural learning order: inspect packet paths with `tracepath`, then deepen the understanding of local delivery and neighbour discovery before progressing into DNS configuration, TCP/UDP, ports, listening services and connectivity troubleshooting. Reinforce concepts through hands-on exercises rather than rushing through the checklist.
+
+-------------------------------------------------
