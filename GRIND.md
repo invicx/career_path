@@ -585,3 +585,39 @@ Epiphanies / Key Realizations
 Next - Continue Networking-as-Troubleshooting in a natural learning order: inspect packet paths with `tracepath`, then deepen the understanding of local delivery and neighbour discovery before progressing into DNS configuration, TCP/UDP, ports, listening services and connectivity troubleshooting. Reinforce concepts through hands-on exercises rather than rushing through the checklist.
 
 -------------------------------------------------
+
+Date - 2026-10-29
+
+Subject - Linux
+
+Topic - Networking-as-Troubleshooting: sockets, binding, listening ports, and HTTP diagnostics
+
+Commands - `sudo ss -tulpn`, `python3 -m http.server 8080 --bind 127.0.0.1`, `top`, `ps aux`, `curl -v https://google.com`, `curl -I https://google.com`
+
+Keywords - sockets, endpoints, TCP states, binding, loopback, `0.0.0.0`, ports, listening sockets, DNS resolution, TCP connection, TLS handshake, HTTP/2, response headers, HTTP 301 redirect
+
+Brief -
+
+Reviewed `ss -tulpn` and interpreted live output from the Ubuntu VM. Identified SSH listening on port 22, the local DNS resolver on port 53, and UDP sockets associated with DHCP.
+
+Covered sockets and endpoints, the distinction between TCP connection states and HTTP methods, and how applications bind sockets to IP addresses and ports. Clarified that `127.0.0.1` restricts a service to loopback, while `0.0.0.0` binds it to all local IPv4 interfaces. A listening socket alone does not guarantee external reachability.
+
+Started a Python HTTP server bound to `127.0.0.1:8080`, verified the listening socket with `ss`, and inspected process resource usage. Stopped the server after the experiment.
+
+Used `curl -v https://google.com` to observe DNS resolution, TCP connection establishment, TLS negotiation and certificate verification, the HTTP request, and Google's HTTP/2 301 redirect to `https://www.google.com/`.
+
+Used `curl -I https://google.com` to inspect response headers without displaying the response body. Reviewed the `location` header and the meaning of HTTP status 301.
+
+Epiphanies / Key Realizations -
+
+- `ss -tulpn` shows listening TCP/UDP sockets, their addresses and ports, and associated processes; it does not prove external connectivity.
+- Binding associates a socket with a local IP address and port.
+- `127.0.0.1` means loopback; `0.0.0.0` means all local IPv4 interfaces when binding.
+- A TCP connection's state is different from an HTTP method such as GET or POST.
+- `curl -v` exposes connection and protocol details; `curl -I` requests headers only.
+- The observed request sequence was DNS resolution, TCP connection, TLS handshake, then HTTP request/response.
+- HTTP 301 indicates a permanent redirect, with the destination supplied in the `location` header.
+
+Next -
+
+Continue Section 9 with `dig` and `nslookup`, then cover `nc`, `/etc/hosts`, `/etc/resolv.conf`, and `wget`. Reinforce the networking concepts through hands-on troubleshooting.
