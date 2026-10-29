@@ -368,7 +368,7 @@ Continue Section 4 (Text Processing) with a dedicated grep lab. Practise regex a
 
 ----------------------------
 
-Date - October 14, 2026
+Date - 2026-10-14
 
 Subject - Linux Text Processing
 
@@ -400,7 +400,7 @@ Next - Complete awk with practical exercises, cover redirection and xargs, pract
 
 ---------------------------------
 
-Date - October 15, 2026
+Date - 2026-10-15
 
 Subject - Linux Text Processing
 
