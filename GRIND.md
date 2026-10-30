@@ -621,3 +621,43 @@ Epiphanies / Key Realizations -
 Next -
 
 Continue Section 9 with `dig` and `nslookup`, then cover `nc`, `/etc/hosts`, `/etc/resolv.conf`, and `wget`. Reinforce the networking concepts through hands-on troubleshooting.
+
+---------------------------------------
+
+Date - 2026-10-30
+
+Subject - Linux Networking
+
+Topic - Networking troubleshooting: interfaces, routing, DNS, ports, and connectivity testing.
+
+Commands -
+- `ip a`, `ip route`, `ip route get <IP>`, `ip neigh`
+- `ping -c <count> <host>`, `tracepath <host>`
+- `ss -tulpn`, `sudo ss -tulpn`, `grep`, pipes (`|`)
+- `curl`, `curl -v`, `curl -I`, `curl -L`, `curl -IL`
+- `dig`, `dig A`, `dig AAAA`, `nslookup`
+- `nc -vz <host> <port>`
+- `python3 -m http.server <port> --bind <IP>`
+
+Keywords -
+- TCP, UDP, ICMP, DNS, IPv4, IPv6, CIDR, subnet, gateway, routing, loopback, MAC address, ARP, sockets, listening ports, TCP handshake, TLS handshake, HTTP, DNS resolver, TTL, redirects, Netcat, port numbers.
+
+Brief -
+Practised Linux networking commands and learned how to inspect network interfaces, routing decisions, neighbour tables, listening sockets, and DNS records. Used `ping` and `tracepath` to investigate connectivity, and `curl` to inspect HTTP responses, redirects, TLS details, and headers. Used `nc` to test TCP connectivity to port 443 and reviewed important ports for SSH, DNS, web traffic, databases, and DevOps infrastructure.
+
+Epiphanies / Key Realizations -
+- DNS resolution, TCP connectivity, TLS negotiation, and HTTP communication are distinct stages.
+- `nc -vz` tests whether a TCP connection can be established; it does not perform a TLS handshake or send an HTTP request.
+- A listening port does not automatically mean a service is reachable from outside the machine.
+- `127.0.0.1` is loopback; `0.0.0.0` means all local IPv4 interfaces when used as a bind address.
+- Failed ping responses do not always mean the destination machine is down.
+- `dig` and `nslookup` investigate DNS; `curl` tests application-level web communication.
+- Database and infrastructure management ports should not be exposed publicly without deliberate security controls.
+
+Next -
+- Learn `/etc/hosts` and how local hostname resolution works.
+- Inspect `/etc/resolv.conf` and understand DNS resolver configuration.
+- Learn `wget` and compare it with `curl`.
+- Continue Section 9 of the Linux networking checklist.
+
+------------------------------------------
