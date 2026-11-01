@@ -661,3 +661,30 @@ Next -
 - Continue Section 9 of the Linux networking checklist.
 
 ------------------------------------------
+
+Date - 2026-11-01
+
+Subject - Linux Documentation & Organisation
+
+Topic - Organising Linux command reference and networking notes.
+
+Commands -
+- No new commands practised.
+
+Keywords -
+- Linux documentation, command reference, networking cheat sheet, IPv4 subnetting, troubleshooting.
+
+Brief -
+Organised Linux learning notes into a structured reference document. Reviewed the networking section, including troubleshooting commands, IPv4 subnetting, private IP ranges, classful addressing, and important ports. The document is organised into separate tabs: Commands, Network, Exit Status, and Quick TS.
+
+Epiphanies / Key Realizations -
+- Having a structured personal reference makes revision and troubleshooting easier.
+- Documentation should support practical learning, not replace it.
+
+Next -
+- Continue Section 9: inspect `/etc/hosts`.
+- Study `/etc/resolv.conf`.
+- Learn `wget`.
+- Continue updating the Linux reference document.
+
+-----------------------------------------------------------------
