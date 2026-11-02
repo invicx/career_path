@@ -688,3 +688,40 @@ Next -
 - Continue updating the Linux reference document.
 
 -----------------------------------------------------------------
+
+Date - 2026-11-02
+
+Subject - Linux Networking
+
+Topic - Network troubleshooting methodology and understanding the sequence of checks.
+
+Commands -
+- `ip a`
+- `ip route`
+- `ping -c 4 192.168.64.1`
+- `/etc/hosts`
+- `/etc/resolv.conf`
+
+Keywords -
+- Network troubleshooting, interface, routing table, gateway, connectivity, DNS, troubleshooting sequence.
+
+Brief -
+
+Discussed how to approach Linux network troubleshooting systematically rather than running commands randomly.
+
+Asked about the common types of networking issues, the commands used to investigate them, and the correct order in which checks should be performed.
+
+Established a troubleshooting sequence: inspect network interfaces, check routing and the default gateway, test local and external connectivity, then investigate DNS and application-level connectivity.
+
+Reviewed the VM's interface and routing configuration and successfully tested connectivity to its default gateway.
+
+Introduced `/etc/hosts` and `/etc/resolv.conf` as configuration files relevant to hostname resolution and DNS troubleshooting.
+
+Epiphanies / Key Realizations -
+
+- Network troubleshooting should follow a structured sequence, narrowing down the possible cause at each stage.
+- Different commands investigate different parts of the networking stack; knowing when to use each is more important than memorising commands.
+
+Next -
+
+- SSH
