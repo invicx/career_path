@@ -724,4 +724,78 @@ Epiphanies / Key Realizations -
 
 Next -
 
-- SSH
+- SSH (need to complete)
+
+-------------------------------------------
+
+Date - 2026-11-03
+
+Subject - Linux – Bash Scripting Fundamentals
+
+Topic - Variables, Command Chaining, User Input, Arithmetic, Conditionals and Exit Statuses
+
+Commands -
+- `echo "$VARIABLE"` — display variable values
+- `NAME="Ali"` — variable assignment
+- `read -p "Enter your name: " NAME` — prompt and capture user input
+- `;` — execute commands sequentially
+- `&&` — execute the next command only if the previous succeeds
+- `&` — run a command in the background
+- `$((expression))` — arithmetic expansion
+- `((expression))` — arithmetic evaluation
+- `mkdir test-folder` — practical command used while exploring exit statuses
+- `$?` — retrieve the previous command's exit status
+- `[ condition ]` — evaluate a test condition
+
+Keywords -
+- Bash variables
+- Variable assignment and expansion
+- Command chaining
+- User input
+- Arithmetic operators
+- Integer division
+- Modulus and exponentiation
+- Conditional statements
+- Integer comparison operators
+- Exit statuses
+- Command execution order
+
+Brief -
+
+Started practical Bash learning in Ubuntu using Bash 5.2.21.
+
+Covered variable declaration, reassignment, expansion and value copying. Practised tracing variable changes and understanding that assigning one variable to another copies its current value rather than creating a live reference.
+
+Explored command chaining using `;`, `&&` and `&`, including the difference between sequential execution, conditional execution and background execution.
+
+Introduced user input using `read` and `read -p`, including overwriting existing variables and handling empty input.
+
+Covered Bash arithmetic using `$(( ))` and `(( ))`. Practised addition, subtraction, multiplication, division, modulus, exponentiation, increment, decrement and compound assignment operators.
+
+Understood integer division and how Bash truncates fractional results. Explored why operation order matters when calculating percentages and why multiplying before dividing can prevent premature truncation.
+
+Introduced conditional logic using `if`, `elif`, `else` and `fi`. Practised integer comparisons using `-eq`, `-ne`, `-gt`, `-lt`, `-ge` and `-le`. Worked through a disk-usage classification scenario with Healthy, Warning and Critical thresholds.
+
+Covered command exit statuses using `$?`, where zero represents success and non-zero represents failure. Learned to capture an exit status immediately because subsequent commands overwrite it.
+
+Epiphanies / Key Realizations -
+
+- Variable assignment copies the value at the time of expansion. It does not create a live connection between variables.
+- `&&` and `;` behave differently when a previous command fails.
+- Bash arithmetic uses integer division by default, discarding fractional parts rather than rounding.
+- Arithmetic operation order matters because integer division can truncate intermediate results.
+- Conditional statements execute the first matching branch, making condition order important.
+- `else` is unconditional; additional conditions belong in `elif`.
+- `$?` must be captured immediately if its value needs to be preserved.
+- Understanding syntax is only the first step. Actual scripting requires combining these concepts into executable programs.
+
+Next -
+
+- Continue practising variables, arithmetic and user input.
+- Learn `for`, `while` and `until` loops.
+- Learn positional arguments: `$1`, `$2`, `$@` and `$#`.
+- Cover `case` statements and functions.
+- Learn script execution, shebangs and `chmod +x`.
+- Build practical Bash automation scripts, starting with a Linux health-check script.
+
+-------------------------------------------------------
