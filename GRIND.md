@@ -799,3 +799,71 @@ Next -
 - Build practical Bash automation scripts, starting with a Linux health-check script.
 
 -------------------------------------------------------
+
+Date - 2026-11-04
+
+Subject - Linux – Bash Scripting Fundamentals
+
+Topic - For, While and Until Loops; Positional Arguments; Brace Expansion; $@ vs $*
+
+Commands -
+- `for NUMBER in {2..10..2}; do ...; done`
+- `while [ "$COUNT" -ge 6 ]; do ...; done`
+- `until [ "$COUNT" -eq 4 ]; do ...; done`
+- `((COUNT++))` — increment by 1
+- `((COUNT--))` — decrement by 1
+- `((COUNT-=2))` — decrement by 2
+- `set -- {1..5}` — assign positional arguments
+- `set -- "Ali Hussain" Docker AWS`
+- `echo "$1"` — access first positional argument
+- `echo "$@"` — display all arguments
+- `echo "$#"` — count positional arguments
+- `printf '<%s>' "$@"` — display arguments individually without adding a newline
+
+Keywords -
+- Bash loops
+- For loop
+- While loop
+- Until loop
+- Loop conditions and termination
+- Nested loops and conditionals
+- Increment and decrement
+- Positional arguments
+- Brace expansion
+- `$1`, `$2`, `$3`
+- `$@` vs `$*`
+- Argument preservation
+- `set --`
+
+Brief -
+
+Practised Bash loop structures, including `for`, `while` and `until`. Explored numeric ranges using brace expansion and step values, along with incrementing and decrementing variables inside loops.
+
+Understood the difference between `while` and `until`: while continues as long as its condition is true, whereas until continues while its condition is false. Practised how comparison operators such as `-eq`, `-le`, `-lt` and `-ge` affect loop termination.
+
+Introduced positional arguments using `set --`. Practised accessing individual arguments through `$1`, `$2`, `$3`, displaying all arguments using `$@`, and counting them using `$#`.
+
+Explored the difference between `"$@"` and `"$*"`. Understood that `"$@"` preserves individual arguments, while `"$*"` combines them into a single string when quoted.
+
+Epiphanies / Key Realizations -
+
+- A loop needs a condition that eventually changes to allow termination.
+- `while` and `until` evaluate conditions differently.
+- The loop condition is checked before each iteration.
+- Brace expansion `{start..end..step}` generates numeric sequences.
+- `set --` assigns positional parameters in the current shell.
+- `"$@"` preserves individual argument boundaries, including arguments containing spaces.
+- `"$*"` combines positional arguments into one string when quoted.
+- Commands such as `echo` and `printf` can display arguments differently without changing how Bash stores them.
+- Combining loops, conditions and arguments is the foundation for building useful automation.
+
+Next -
+
+- Continue Bash positional arguments and argument handling.
+- Learn Bash functions and function arguments.
+- Understand exit statuses and error handling.
+- Learn shebangs and executable `.sh` files.
+- Start writing practical Bash scripts.
+- Build a Linux system health-check automation project.
+
+---------------------------------
