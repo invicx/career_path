@@ -916,3 +916,72 @@ Next -
 - Maintain consistent formatting and explicit approval before every GitHub write.
 
 ----------------------------------------
+
+Date - 2026-11-05
+
+Subject - Linux – Bash Scripting Fundamentals
+
+Topic - Bash Functions, Positional Parameters, Conditional Logic and Argument Validation
+
+Commands -
+- `function_name() { ... }` — define a Bash function
+- `function_name` — invoke a function
+- `$1`, `$2` — access function arguments
+- `$#` — count the supplied arguments
+- `$@` — access all supplied arguments
+- `$(command)` — execute a command and substitute its output
+- `[ -z "$1" ]` — test whether a string is empty
+- `[ -n "$1" ]` — test whether a string is non-empty
+- `[[ condition1 || condition2 ]]` — combine conditions using OR
+- `[[ condition1 && condition2 ]]` — combine conditions using AND
+- `-eq` — compare integers
+- `==` — compare strings
+- `if`, `elif`, `else`, `fi` — conditional execution
+
+Keywords -
+Bash functions, function declaration, function invocation, positional parameters, argument validation, command substitution, conditional expressions, empty strings, `-z`, `-n`, `&&`, `||`, `[[ ]]`, `-eq`, `==`, reusable code, deployment automation
+
+Brief -
+
+Started learning Bash functions and understood how functions group reusable commands into named blocks that execute when called.
+
+Created a basic `welcome` function and experimented with calling it both with and without arguments, observing how `$1` behaves when an argument is missing or supplied.
+
+Built a `system_info` function using `whoami`, `pwd` and `date`, introducing command substitution through `$(command)` to insert command output into strings.
+
+Practised function arguments using `$1` and `$2`, then combined them with conditional statements to build a username checker and a function that validates whether required arguments have been supplied.
+
+Learned argument validation using `-z` and `-n`, distinguishing empty strings from non-empty strings. Built `show_args` using `$#`, `$1`, `$2` and `$@` to display argument counts and values.
+
+Built a deployment function that accepts an application name and environment, validates that exactly two arguments are provided, and displays deployment information. Tested zero, one, two and three arguments successfully.
+
+Created an access checker that distinguishes admin and standard users. Practised combining conditions using `&&` and `||` inside Bash `[[ ]]`, and corrected syntax issues involving spacing, quoting and command substitution.
+
+Epiphanies / Key Realizations -
+
+- Defining a function does not execute it; the function must be called.
+- Function arguments are accessed through positional parameters such as `$1` and `$2`.
+- `$#` counts arguments, while `$@` represents all supplied arguments.
+- `$(command)` executes a command and substitutes its output; `$1` simply accesses an argument.
+- `-z` checks for an empty string, while `-n` checks for a non-empty string.
+- `&&` requires both conditions to be true; `||` requires at least one condition to be true.
+- `[[ ]]` is a Bash conditional expression that supports combining conditions using logical operators.
+- Use `-eq` for integer comparisons and `==` for string comparisons.
+- Quoting variables and maintaining spaces around operators are essential for reliable Bash conditions.
+- Functions become useful automation building blocks when combined with argument validation and conditional logic.
+
+Practical Work / Outcome -
+
+- Created and tested `welcome`, `system_info`, `user_details`, `check_user`, `check_arg`, `show_args`, `deploy` and `access_check`.
+- Successfully tested functions with missing, valid and excess arguments.
+- Built a deployment-style function with strict two-argument validation.
+- Built an access checker with separate admin and standard privilege messages.
+
+Next -
+
+- Learn local variables inside Bash functions using `local`.
+- Understand function return statuses versus displaying output using `echo`.
+- Cover function exit statuses and error handling.
+- Continue towards executable Bash scripts, shebangs and practical automation projects.
+
+----------------------------------------
