@@ -103,6 +103,18 @@ Do not claim success when something was only attempted or remains incomplete.
 
 **Next -** Specific, actionable tasks that continue the learning sequence.
 
+### Journal Entry Separation Rule
+
+- Every journal entry must end with a horizontal divider consisting of exactly **40 hyphens**.
+- Use this exact divider:
+`----------------------------------------`
+
+- Place the divider immediately after the final content of the entry's `Next -` section.
+- The divider must appear at the bottom of every entry, before the next entry begins.
+- Maintain consistent spacing around the divider.
+- Never omit or remove the divider when appending new entries.
+- This rule applies to every journal entry, regardless of subject or technical domain.
+
 ### Mandatory formatting rules
 
 - Follow the structure consistently.
