@@ -985,3 +985,50 @@ Next -
 - Continue towards executable Bash scripts, shebangs and practical automation projects.
 
 ----------------------------------------
+
+Date - 2026-11-06
+
+Subject - Linux - Bash Functions
+
+Topic - Local and global variables, variable scope, function return statuses, exit codes, command execution flow.
+
+Commands - `STATUS="Stopped"` (assign global variable), `local STATUS="Running"` (declare function-local variable), `echo "$STATUS"` (display variable value), `function_name()` (define a function), `return 0` (report success), `return 1` (report failure), `echo $?` (inspect previous command's exit status), `mkdir test_folder` (create directory), `server_check` (execute function), `type greet` (inspect function definition), `declare -p NAME` (inspect variable declaration), `history | grep 'NAME='` (search command history).
+
+Keywords - Local variable, global variable, variable scope, function, return status, exit code, `$?`, command substitution, conditional execution, `&&`, `||`, function execution.
+
+Brief -
+
+1. Reviewed Bash functions and continued from the previous session's function argument and validation exercises.
+2. Learned how `local` declares variables that exist only within a function's execution.
+3. Compared local and global variables using the same variable name and verified that changing a local variable does not overwrite the global value.
+4. Investigated an existing `NAME="AWS"` variable using `declare -p`, `type`, and Bash history; its original assignment could not be reliably identified.
+5. Learned that Bash commands return exit statuses, with `0` conventionally indicating success and non-zero indicating failure.
+6. Practised `return 0` and `return 1` in functions and distinguished function output through `echo` from machine-readable return statuses.
+7. Explored how exit statuses can control subsequent commands using `&&` and `||`, and learned that a function's exit status and the script's final exit status can differ.
+
+Epiphanies / Key Realizations -
+
+- Local variables temporarily shadow global variables with the same name.
+- Global variables can be accessed inside functions unless shadowed by local variables.
+- `echo` communicates readable information to humans, while return statuses communicate results to other commands and scripts.
+- Exit code `0` conventionally means success; non-zero means failure or another defined condition.
+- A function can fail while the overall script continues and eventually exits successfully.
+- Python also uses local and global scope, although its rules differ from Bash.
+
+Practical Work / Outcome -
+
+- Created and tested `server_check()` using local and global variables.
+- Created and tested `database_check()` with `Offline`, `Online`, and `Maintenance` values.
+- Verified that local assignments did not modify global variables.
+- Tested successful and unsuccessful function return statuses.
+- Used `mkdir` and `$?` to observe the difference between successful directory creation and attempting to create an existing directory.
+
+Next -
+
+- Complete the `database_check()` conditional execution challenge.
+- Practise capturing and using function return statuses.
+- Learn function exit-status handling and error handling.
+- Cover Bash `case` statements.
+- Begin executable `.sh` scripts, shebangs, permissions, and practical automation.
+
+----------------------------------------
