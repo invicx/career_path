@@ -1032,3 +1032,60 @@ Next -
 - Begin executable `.sh` scripts, shebangs, permissions, and practical automation.
 
 ----------------------------------------
+
+
+Date - 2026-11-07
+
+Subject - Linux - Bash Scripting Fundamentals
+
+Topic - Exit status handling, command chaining, conditional execution, capturing exit codes, function-based error handling
+
+Commands - `&&` (execute next command on success), `||` (execute next command on failure), `; ` (execute commands regardless of previous status), `false` (return failure status), `true` (return success status), `echo $?` (inspect previous command's exit status), `STATUS=$?` (capture exit status in a variable), `return 0/1/2` (return function status), `if`, `elif`, `else`, `fi` (conditional execution), `database_check()` (define and test database function), `scheck()` (define and test server check function), `type database_check` (inspect function definition)
+
+Keywords - Bash, exit status, return status, `$?`, status variable, command chaining, conditional execution, logical operators, `&&`, `||`, semicolon, functions, error handling, `if`, `elif`, `else`, debugging, execution flow
+
+Brief -
+
+1. Continued Bash function learning from the previous session, focusing on how function return statuses control subsequent command execution.
+
+2. Practised `&&`, `||` and `; `, understanding the difference between continuing after success, continuing after failure, and executing commands regardless of the previous result.
+
+3. Tested command chains using `true`, `false` and `echo`, and observed how `$?` changes after each command depending on its exit status.
+
+4. Learned to preserve an earlier exit status using `STATUS=$?`, and verified that subsequent successful commands do not change the value already stored in the variable.
+
+5. Applied function return statuses directly inside `if` conditions and learned how Bash selects between `then`, `elif` and `else` based on command success or failure.
+
+6. Built and tested a database check function with return values `0`, `1` and `2`, handling healthy, offline and connection-timeout outcomes through conditional logic.
+
+7. Independently built and tested a server check function using all three return statuses, identified an unnecessary second function invocation in the initial implementation, and corrected the execution flow by capturing the status before evaluating it.
+
+Epiphanies / Key Realizations -
+
+- `&&` executes the next command only when the previous command returns `0`.
+- `||` executes the next command when the previous command returns a non-zero status.
+- `; ` separates commands without depending on the previous command's success or failure.
+- `$?` always reflects the immediately preceding command's exit status.
+- Assigning `STATUS=$?` preserves the captured value for later use.
+- Bash treats exit status `0` as true and non-zero statuses as false in conditional execution.
+- An `if` statement can evaluate a function directly without explicitly comparing `$?` to zero.
+- A function's readable output through `echo` is separate from its machine-readable return status.
+- Calling a function twice means executing it twice; capture and reuse its status when only one execution is intended.
+
+Practical Work / Outcome -
+
+- Tested `&&`, `||` and `; ` using successful and unsuccessful commands.
+- Practised storing and reusing exit statuses through `STATUS=$?`.
+- Built and tested database and server check functions with three distinct return statuses.
+- Successfully handled all three outcomes using `if`, `elif` and `else`.
+- Used `type database_check` to inspect a function defined directly in the terminal.
+- Identified and corrected an execution-flow mistake involving an unnecessary second function call.
+
+Next -
+
+- Learn Bash `case` statements and compare them with `if/elif/else`.
+- Practise handling multiple outcomes using `case`.
+- Continue towards executable Bash scripts, shebangs and file permissions.
+- Begin practical automation exercises involving system health checks and error handling.
+
+----------------------------------------
