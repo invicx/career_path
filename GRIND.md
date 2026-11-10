@@ -1089,3 +1089,60 @@ Next -
 - Begin practical automation exercises involving system health checks and error handling.
 
 ----------------------------------------
+
+Date - 2026-11-10
+
+Subject - Linux - Bash Scripting Fundamentals
+
+Topic - Case statements, pattern matching, wildcard alternatives, interactive user input, and status classification
+
+Commands -
+- `case "$STATUS" in` — begin pattern-based conditional matching
+- `running|active)` — match either exact pattern
+- `fail*|error*)` — match values beginning with either prefix
+- `*stop|*down)` — match values ending with either suffix
+- `*)` — define the default fallback pattern
+- `;;` — terminate a case branch
+- `esac` — close the case statement
+- `read -p "Enter server status: " STATUS` — prompt for and capture user input
+- `echo` — print a newline for output spacing
+- `echo "$STATUS"` — display the captured variable
+
+Keywords -
+Bash case statements, pattern matching, wildcard characters, prefix matching, suffix matching, alternative patterns, fallback pattern, interactive input, `read -p`, `STATUS`, `;;`, `esac`, conditional logic, CLI interaction, syntax debugging
+
+Brief -
+
+1. Started Bash `case` statements, learning their structure, including `case`, `in`, pattern branches, `;;` and `esac`.
+2. Practised exact matching with values such as `running`, `stopped` and `maintenance`, and used `*)` as the fallback for unmatched values.
+3. Learned to combine alternative patterns using `|`, allowing multiple values to share the same action.
+4. Explored wildcard placement through `fail*`, `*fail` and `*fail*`, understanding how patterns match prefixes, suffixes and contained text.
+5. Independently built a multi-condition server status classifier using combined patterns and tested `failure`, `error-500`, `running` and `server-down`.
+6. Introduced interactive input using `read -p` and independently combined it with `case` to build a status checker; tested `server-down` and `maintenance`.
+7. Debugged syntax errors caused by placing an independent `echo` command inside the case structure, then moved output spacing after `esac` to keep it outside the branches.
+
+Epiphanies / Key Realizations -
+
+- `case` is useful when one variable needs to be compared against several possible patterns.
+- `|` separates alternative patterns within a case branch; it is not the same as logical `||`.
+- Wildcard placement determines whether a pattern matches a beginning, ending or contained sequence.
+- `*)` catches values that do not match any earlier pattern.
+- `read -p` makes a Bash command interactive by capturing user input into a variable.
+- Every command inside a case structure must belong to a valid pattern branch.
+- `;;` ends a branch, while `esac` closes the entire structure.
+- Commands placed after `esac` execute after the case statement finishes.
+
+Practical Work / Outcome -
+
+- Built an interactive server status classifier using `read -p` and `case`.
+- Tested successful classification for `server-down` and fallback handling for `maintenance`.
+- Identified and corrected a syntax error involving command placement inside the case structure.
+
+Next -
+
+- Add empty-input validation using `if`.
+- Combine `if` validation with the existing interactive `case` classifier.
+- Finish the `case` statement exercises.
+- Move into executable Bash scripts, shebangs, file permissions and practical automation.
+
+----------------------------------------
