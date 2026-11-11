@@ -1146,3 +1146,52 @@ Next -
 - Move into executable Bash scripts, shebangs, file permissions and practical automation.
 
 ----------------------------------------
+
+Date - 2026-11-11
+
+Subject - Linux - Bash Scripting Fundamentals
+
+Topic - Empty-input validation, interactive case classification, while loops, loop termination, arithmetic counters, and combining Bash control structures
+
+Commands - `while [ "$STATUS" != "exit" ]` (repeat while status is not exit), `read -p "Enter server status: " STATUS` (capture interactive input), `if [ -z "$STATUS" ]` (check for empty input), `case "$STATUS" in` (match input against patterns), `;;` (terminate a case branch), `esac` (close case statement), `((CHECKS++))` (increment a counter), `((++CHECKS))` (pre-increment a counter), `done` (close a loop), `echo` (display output)
+
+Keywords - Bash, while loops, case statements, interactive input, empty-input validation, loop termination, conditional execution, pattern matching, arithmetic evaluation, counters, pre-increment, post-increment, control flow, debugging
+
+Brief -
+
+1. Continued Bash `case` statement practice by adding empty-input validation using `if`, combining input validation with the existing interactive server status classifier.
+2. Reviewed the complete interactive classifier and understood how `read`, `if`, and `case` work together to validate and classify user input.
+3. Built a repeated server status monitoring exercise using `while`, `read`, and `case`, with the loop continuing until the user enters `exit`.
+4. Compared loop termination through a `while` condition becoming false with using `break`, and established that `break` was unnecessary when the loop condition already controlled termination.
+5. Attempted a login attempt validator combining a counter, `while`, `read`, and `if`; debugged the attempt limit, counter placement, and the distinction between incorrect passwords and account locking.
+6. Built a mini server health monitoring challenge using `STATUS` and `CHECKS`, placing counter increments inside relevant `case` branches so that `exit` would not count as a status check.
+7. Corrected arithmetic syntax and counter logic, including the distinction between arithmetic expressions and ordinary variable expansion; reviewed the final implementation, although its final execution result was not confirmed.
+
+Epiphanies / Key Realizations -
+
+- A `while` loop can terminate naturally when its condition becomes false; `break` is not always necessary.
+- `read` must be inside the loop when fresh input is required on every iteration.
+- `case` can handle empty input through an empty-string pattern (`""`), alongside other patterns and a fallback branch.
+- Counter placement matters: incrementing inside the relevant case branches allows selected inputs, such as `exit`, to be excluded.
+- Bash arithmetic contexts do not require `$` before variable names; use `((CHECKS++))` or `((++CHECKS))`.
+- Post-increment and pre-increment have different expression values, which can affect the exit status of an arithmetic command.
+- A loop can end for different logical reasons, so the program must distinguish successful completion from exhausted attempts when necessary.
+- Combining familiar commands into one program requires understanding execution order, not merely remembering syntax.
+
+Practical Work / Outcome -
+
+- Combined empty-input validation with an interactive server status classifier.
+- Designed a repeated server monitoring loop using `while`, `read`, and `case`, without `if` or `break`.
+- Attempted a three-attempt password validator and reviewed a simplified implementation.
+- Built and reviewed a mini server health monitor with a status counter, excluding the `exit` input from the count.
+- Corrected arithmetic expression syntax and counter placement. Final mini-monitor execution remains to be confirmed.
+
+Next -
+
+- Begin executable Bash scripts using `.sh` files.
+- Understand the shebang (`#!/bin/bash`) and how the operating system selects an interpreter.
+- Learn to create, edit, execute, and manage script file permissions using `chmod`.
+- Practise running scripts and handling execution errors.
+- Build practical automation scripts, including system health checks and monitoring.
+
+----------------------------------------
