@@ -1195,3 +1195,57 @@ Next -
 - Build practical automation scripts, including system health checks and monitoring.
 
 ----------------------------------------
+
+
+Date - 2026-11-12
+
+Subject - Linux - Bash Scripting Fundamentals
+
+Topic - Executable Bash scripts, shebangs, file permissions, absolute and relative paths, execution errors, `set -e`, function return statuses, script exit statuses, exit-code handling, command availability checks and output redirection.
+
+Commands - `nano hello.sh` (create and edit a script), `chmod +x` (grant executable permission), `chmod -x` (remove executable permission), `ls -l` (inspect file permissions), `bash hello.sh` (execute through Bash), `./hello.sh` (execute directly), `./practice/hello.sh` (execute using a relative path), `echo "$PATH"` (inspect command lookup directories), `cd ~` (navigate to home), `cd practice` (change directory), `mv error_test.sh trial.sh` (rename a script), `cat trial.sh` (inspect script contents), `return 1` (return failure from a function), `exit 1` (terminate a script with failure), `echo $?` (inspect the previous command's exit status), `STATUS=$?` (capture an exit status), `if`, `then`, `else`, `fi` (conditional execution), `set -e` (exit on certain unhandled command failures), `command -v docker` (check command availability), `>/dev/null 2>&1` (discard standard output and standard error), `docker --version`, `docker ps` (inspect Docker CLI and daemon connectivity).
+
+Keywords - Bash scripting, shebang, interpreter, executable permission, `chmod`, absolute paths, relative paths, `$PATH`, execution errors, permission denied, exit status, `$?`, `STATUS`, `set -e`, fail-fast, function return, script termination, `return`, `exit`, stdout, stderr, `/dev/null`, redirection, `command -v`, command availability, Docker CLI, Docker daemon.
+
+Brief -
+
+1. Continued executable Bash scripts by understanding the shebang (`#!/bin/bash`), interpreter selection, and the distinction between executing a script through `bash` and executing it directly using `./`.
+2. Practised executable permissions using `chmod +x` and `chmod -x`, inspected permission changes with `ls -l`, and successfully reproduced and resolved a `Permission denied` error.
+3. Explored absolute and relative paths, `$PATH`, and executing scripts from different working directories using their specified paths.
+4. Introduced execution error handling through `set -e`, understanding how it stops a script after certain unhandled command failures instead of blindly continuing.
+5. Deepened understanding of function return statuses and script termination by comparing `return 1` with `exit 1`, and connecting both to `echo $?` and captured status variables.
+6. Practised capturing function exit statuses using `STATUS=$?` and evaluating them through `if` statements, then explored command availability checks using `command -v` and output suppression through `/dev/null` redirection.
+7. Used the Mac and Ubuntu environments to distinguish Docker CLI installation from daemon availability, observed a paused Docker Engine, resumed it, and successfully ran `docker ps` again.
+
+Epiphanies / Key Realizations -
+
+- A shebang identifies the interpreter; executable permission allows direct execution. They serve different purposes.
+- `bash script.sh` does not require executable permission, whereas `./script.sh` does.
+- Absolute paths begin at `/`; relative paths are resolved from the current working directory.
+- `$PATH` determines where the shell searches for commands when their names are entered without explicit paths.
+- `set -e` provides fail-fast behavior but does not undo actions completed before a failure.
+- `return` exits a function, `break` exits a loop, and `exit` terminates the running script.
+- `$?` always represents the immediately preceding command's exit status. Capturing it preserves the value for later decisions.
+- `echo` communicates readable output, while exit statuses communicate success or failure programmatically.
+- `command -v` can be used inside an `if` statement because the condition evaluates its exit status, not whether it displays output.
+- `>/dev/null 2>&1` suppresses both standard output and standard error without removing the command's exit status.
+
+Practical Work / Outcome -
+
+- Created and executed `hello.sh`, including direct execution through its shebang.
+- Changed executable permissions and reproduced the `Permission denied` error before restoring permissions.
+- Renamed `error_test.sh` to `trial.sh` and reused it as the Bash practice file.
+- Built and tested a function using `return 1`, confirming that execution resumes in the calling script.
+- Tested function status capture and conditional failure reporting.
+- Verified Docker CLI availability on macOS and restored Docker Engine after discovering it was paused.
+- The reusable `check_command` function exercise was introduced but not completed.
+
+Next -
+
+- Complete the reusable `check_command` function using `$1`, `command -v`, and `return`.
+- Practise checking command availability without displaying unnecessary output.
+- Explore `set -u` and `set -o pipefail` alongside `set -e`.
+- Build a practical system health-check script combining functions, conditionals, exit statuses, and error handling.
+- Continue into practical Bash automation and troubleshooting.
+
+----------------------------------------
