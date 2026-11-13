@@ -1249,3 +1249,40 @@ Next -
 - Continue into practical Bash automation and troubleshooting.
 
 ----------------------------------------
+
+Date - 2026-11-13
+
+Subject - Linux
+
+Topic - Bash Functions, Command Availability Checks and User Input
+
+Commands - `read -r -p` (read user input safely with a prompt), `command -v` (check command availability), `>/dev/null 2>&1` (suppress stdout and stderr), `if/else` (conditional execution), `return 0` (successful function status), `return 1` (unsuccessful function status), `echo` (display output), `check_status "$toolname"` (invoke a function with an argument)
+
+Keywords - Bash functions, positional parameters, `$1`, variables, command availability, exit status, input handling, redirection, option ordering
+
+Brief -
+
+1. Started building a reusable Bash function to check whether a command-line tool is available.
+2. Used `command -v` to check command availability and understood that it checks the executable's presence, not whether its underlying service is running.
+3. Implemented conditional logic using `if/else` to handle available and unavailable commands.
+4. Learned that `return 0` and `return 1` communicate the function's success or failure status.
+5. Understood the difference between a function's positional parameter `$1` and an external variable such as `$toolname`.
+6. Practiced `read -r -p` and learned how `-r` preserves backslashes and why option ordering matters for `read`.
+7. Explored newline handling in prompts and learned that `$'...'` interprets escape sequences such as `\n`, unlike ordinary double quotes.
+
+Epiphanies / Key Realizations -
+
+- Function arguments are passed when the function is called and accessed through positional parameters such as `$1`.
+- A reusable function should rely on its arguments rather than unnecessarily depending on external variables.
+- A successful `echo` does not mean the function's intended operation succeeded; explicit return statuses matter.
+- Different commands can have different option-parsing rules.
+
+Practical Work / Outcome -
+
+Built a Bash command-checking function that accepts a tool name, checks its availability, prints the result, and returns an appropriate exit status.
+
+Next -
+
+Continue Bash error handling with `set -u` and `set -o pipefail`, then build a practical system health-check script.
+
+----------------------------------------
