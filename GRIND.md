@@ -1286,3 +1286,40 @@ Next -
 Continue Bash error handling with `set -u` and `set -o pipefail`, then build a practical system health-check script.
 
 ----------------------------------------
+
+
+Date - 2026-11-15
+
+Subject - NAS and Home Lab
+
+Topic - Synology NAS for local storage, Raspberry Pi fundamentals and potential applications
+
+Commands - None (video-based conceptual learning)
+
+Keywords - NAS, Network Attached Storage, Synology, local storage, Raspberry Pi, home lab, centralized storage
+
+Brief -
+
+1. Explored Network Attached Storage (NAS) and its role in providing centralized storage within a local network.
+2. Focused on Synology as a NAS platform for local storage.
+3. Watched videos explaining how Synology NAS systems can be used for storing data locally.
+4. Explored Raspberry Pi as a compact computing system and its potential applications.
+5. Learned about possible ways to use Raspberry Pi through video-based explanations.
+6. Began connecting NAS and Raspberry Pi concepts to practical home-lab possibilities.
+7. Kept the session focused on conceptual understanding; no physical setup, configuration or hands-on testing was performed.
+
+Epiphanies / Key Realizations -
+
+- NAS provides centralized storage accessible over a network.
+- Synology offers a dedicated platform for managing NAS storage.
+- Raspberry Pi offers a compact computing platform for various home-lab projects.
+
+Next -
+
+- Return to the existing Bash learning sequence.
+- Learn `set -u` and how it handles undefined variables.
+- Learn `set -o pipefail` and understand pipeline failure handling.
+- Combine these with `set -e`.
+- Build a practical Bash system health-check script.
+
+----------------------------------------
