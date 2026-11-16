@@ -1323,3 +1323,45 @@ Next -
 - Build a practical Bash system health-check script.
 
 ----------------------------------------
+
+Date - 2026-11-16
+
+Subject - Linux and Bash Scripting
+
+Topic - Bash scripting knowledge assessment, command execution, control flow, functions, positional parameters and error handling concepts
+
+Commands - None (quiz-based assessment; no terminal commands executed)
+
+Keywords - Positional Parameters, Functions, command -v, read -r -p, Conditional Statements, case, while loops, Wildcards, Arithmetic Expansion, Exit Status, return, exit, Shebang, File Permissions, Standard Output, Standard Error, /dev/null
+
+Brief -
+
+1. Conducted two quiz sessions to assess previously covered Linux and Bash scripting concepts.
+2. The first session used a mixed DevOps assessment covering Bash, Docker, networking, cloud and troubleshooting.
+3. Identified that the first assessment included concepts outside the documented learning scope.
+4. Recalibrated the assessment to follow the knowledge covered in GRIND.md through November 15.
+5. Completed a second Bash-focused assessment consisting of 10 progressively challenging questions.
+6. Assessed positional parameters, loops, arithmetic, command availability, redirection, exit statuses, case patterns, functions and script execution.
+7. Used the assessment to reinforce previously learned concepts and identify areas requiring further revision; no terminal exercises or new implementations were performed.
+
+Epiphanies / Key Realizations -
+
+- Assessments must follow the actual learning history rather than introduce unlearned concepts.
+- Understanding individual Bash commands is not enough; combining them correctly requires practical reasoning.
+- Quiz performance and conceptual understanding should be tracked separately from hands-on implementation.
+
+Practical Work / Outcome -
+
+- Completed two quiz sessions.
+- The second assessment contained 10 questions aligned with the documented Bash learning scope.
+- Individual answers and scores were not recorded in the available session history.
+
+Next -
+
+- Resume the existing Bash learning sequence.
+- Study `set -u` and undefined variable handling.
+- Understand `set -o pipefail`.
+- Combine `set -e`, `set -u` and `pipefail`.
+- Build a practical Bash system health-check script.
+
+----------------------------------------
