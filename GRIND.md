@@ -1365,3 +1365,48 @@ Next -
 - Build a practical Bash system health-check script.
 
 ----------------------------------------
+
+Date - 2026-11-17
+
+Subject - Linux - Bash Scripting
+
+Topic - Bash error handling, unset variable protection, parameter expansion, pipeline failure handling and strict mode
+
+Commands - `set -u` (detect unset variables), `unset COUNT` (remove a variable), `${VAR:-default}` (fallback for unset or empty variables), `${VAR-default}` (fallback only for unset variables), `${VAR:?message}` (error for unset or empty variables), `${VAR?message}` (error only for unset variables), `set -o pipefail` (detect pipeline failures), `set -e` (exit on certain command failures), `set -euo pipefail` (combine strict-mode options), `ls /imaginary_folder | wc -l` (test pipeline failure handling), `echo "$?"` (inspect exit status), `nano trial.sh` (edit practice script), `./trial.sh` (execute script)
+
+Keywords - Bash, error handling, unset variables, empty variables, `unset`, parameter expansion, default values, mandatory variables, exit status, pipeline, pipefail, fail-fast, `set -e`, `set -u`, strict mode, standard output, command execution
+
+Brief -
+
+1. Continued Bash error handling by introducing `set -u` and understanding how it detects references to variables that have not been defined.
+2. Distinguished between unset variables, explicitly empty variables and variables containing values, and learned how `unset` removes a variable.
+3. Explored Bash parameter expansion using `:-` and `-`, understanding the difference between fallback handling for empty and unset variables.
+4. Learned mandatory-variable validation through `:?` and `?`, including how custom error messages can prevent scripts from proceeding with missing configuration.
+5. Introduced `set -o pipefail` and investigated how Bash normally reports the exit status of the last command in a pipeline.
+6. Tested pipeline failure handling using `ls /imaginary_folder | wc -l`, observed the difference introduced by `pipefail`, and understood why the resulting status was 2 rather than 1.
+7. Studied `set -e` and combined `set -euo pipefail`, understanding how pipeline failure detection and fail-fast execution work together.
+
+Epiphanies / Key Realizations -
+
+- An unset variable is different from a variable explicitly assigned an empty value.
+- `unset` removes a variable instead of merely emptying its contents.
+- The colon in parameter expansion changes whether an empty value is treated like an unset value.
+- `pipefail` returns the rightmost non-zero status in a pipeline, rather than simply reporting the last command's status.
+- `set -e` reacts to certain unhandled command failures, while `pipefail` exposes failures that could otherwise be hidden by successful later pipeline commands.
+- Combining `set -e`, `set -u` and `pipefail` provides stronger Bash script error handling.
+
+Practical Work / Outcome -
+
+- Continued using the reusable `trial.sh` practice file.
+- Tested pipeline behaviour with and without the intended error-handling configuration.
+- Observed pipeline exit status 2 when `ls` failed and `wc -l` succeeded.
+- Tested `set -e` behaviour and reasoned through the combined strict-mode execution sequence.
+- No complete system health-check script was built during this session.
+
+Next -
+
+- Test important edge cases and exceptions of `set -e`, especially inside conditions and functions.
+- Reinforce the behaviour of `set -euo pipefail`.
+- Build a practical Bash system health-check script using functions, conditionals, command availability checks and exit statuses.
+
+----------------------------------------
